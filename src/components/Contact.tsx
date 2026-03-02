@@ -70,8 +70,11 @@ export default function Contact() {
                                     <select name="project_scope" className="w-full bg-white/5 border border-white/10 h-14 rounded-2xl px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none">
                                         <option className="bg-background">AI & Machine Learning</option>
                                         <option className="bg-background">Data Engineering</option>
+                                        <option className="bg-background">Web Design & Apps</option>
                                         <option className="bg-background">SaaS Development</option>
-                                        <option className="bg-background">Strategy Consulting</option>
+                                        <option className="bg-background">Brand & Rebranding</option>
+                                        <option className="bg-background">Graphic Design & Logos</option>
+                                        <option className="bg-background">Marketing & Growth</option>
                                     </select>
                                 </div>
 

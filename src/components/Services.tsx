@@ -8,7 +8,11 @@ import {
     Cpu,
     Layout,
     CheckCircle2,
-    ArrowUpRight
+    ArrowUpRight,
+    Globe,
+    Palette,
+    Layers,
+    Megaphone
 } from "lucide-react";
 
 const services = [
@@ -63,6 +67,58 @@ const services = [
             "SaaS Scaling & Security"
         ],
         tech: ["Next.js", "React", "PostgreSQL", "Vercel", "AWS"]
+    },
+    {
+        title: "Web Design & Apps",
+        icon: Globe,
+        description: "Architecting high-performance web experiences and complex applications with a focus on premium UX/UI.",
+        subservices: [
+            "Progressive Web Apps (PWA)",
+            "High-end UI/UX Architecture",
+            "Interactive Web Design",
+            "Full-stack Web Ecosystems",
+            "Performance Optimization"
+        ],
+        tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion"]
+    },
+    {
+        title: "Brand & Rebranding",
+        icon: Palette,
+        description: "Strategically defining and redesigning corporate identities that resonate with the modern digital landscape.",
+        subservices: [
+            "Strategic Brand Rebranding",
+            "Visual Identity Systems",
+            "Corporate Strategy & Positioning",
+            "Premium Branding Guidelines",
+            "Brand Voice & Messaging"
+        ],
+        tech: ["Strategy", "Visuals", "Identity", "Premium", "Modern"]
+    },
+    {
+        title: "Graphic Design & Logos",
+        icon: Layers,
+        description: "Creative visual engineering, from professional logo creation to comprehensive graphic systems.",
+        subservices: [
+            "Corporate Logo Design",
+            "Creative Graphic Assets",
+            "Brand Design Systems",
+            "Vector Engineering",
+            "Visual Storytelling"
+        ],
+        tech: ["Adobe", "Figma", "Design", "Vector", "Creativity"]
+    },
+    {
+        title: "Marketing & Growth",
+        icon: Megaphone,
+        description: "Data-driven marketing strategies engineered to scale ROI and authority through intelligent distribution.",
+        subservices: [
+            "Performance Marketing",
+            "SEO & Content Architecture",
+            "Social Media Engineering",
+            "Growth Strategy Consulting",
+            "Marketing Automation"
+        ],
+        tech: ["Ads", "SEO", "Strategy", "Analytics", "Scaling"]
     }
 ];
 
