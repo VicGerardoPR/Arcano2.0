@@ -1,7 +1,5 @@
 import { HfInference } from "@huggingface/inference";
 
-export const runtime = "edge";
-
 const SYSTEM_PROMPT = `
 You are Arcano Intelligence's Senior AI Consultant. Your goal is to help potential clients understand how Arcano Intelligence can transform their business with AI, Data Engineering, and Automation.
 
