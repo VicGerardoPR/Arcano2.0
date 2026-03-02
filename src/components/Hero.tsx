@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
@@ -46,10 +47,12 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button size="lg" className="h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold group">
-                            Book a Strategy Call
-                            <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                        <Link href="#contact">
+                            <Button size="lg" className="h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full font-bold group">
+                                Get Started
+                                <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Link>
                         <Button size="lg" variant="outline" className="h-14 px-8 border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-md rounded-full text-white font-bold group">
                             Explore Solutions
                         </Button>

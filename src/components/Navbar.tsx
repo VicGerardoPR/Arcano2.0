@@ -51,10 +51,12 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 group">
-            Book a Call
-            <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link href="#contact">
+            <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 group">
+              Contact Us
+              <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -85,9 +87,11 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-primary text-primary-foreground">
-              Book a Call
-            </Button>
+            <Link href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button className="w-full bg-primary text-primary-foreground">
+                Contact Us
+              </Button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

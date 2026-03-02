@@ -19,7 +19,7 @@ export default function Contact() {
                                 <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">Ready to Engineer Your Future?</h2>
                                 <p className="text-primary-foreground/80 text-lg mb-12 max-w-md">
                                     Let's discuss your enterprise's potential for intelligent transformation.
-                                    Book a call or send us a message to start the conversation.
+                                    Send us a message to start the conversation.
                                 </p>
 
                                 <div className="space-y-8">
@@ -86,13 +86,9 @@ export default function Contact() {
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                    <Button type="submit" className="h-16 flex-1 rounded-2xl bg-primary text-primary-foreground font-black text-lg group">
+                                    <Button type="submit" className="h-16 flex-1 rounded-2xl bg-primary text-primary-foreground font-black text-lg group w-full">
                                         Send Message
                                         <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                    </Button>
-                                    <Button type="button" variant="outline" className="h-16 flex-1 rounded-2xl border-white/10 bg-white/5 font-black text-lg group">
-                                        Book Call
-                                        <Calendar className="ml-2 w-5 h-5" />
                                     </Button>
                                 </div>
                             </form>
