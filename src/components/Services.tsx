@@ -15,114 +15,54 @@ import {
     Megaphone
 } from "lucide-react";
 
-const services = [
-    {
-        title: "AI & Machine Learning",
-        icon: Brain,
-        description: "Advanced model development tailored to your enterprise needs, from predictive analytics to generative systems.",
-        subservices: [
-            "Custom NLP & LLM Fine-tuning",
-            "Computer Vision Systems",
-            "Predictive Modeling & Forecasting",
-            "Multimodal AI Integration",
-            "Autonomous AI Agents"
-        ],
-        tech: ["PyTorch", "TensorFlow", "HuggingFace", "Mistral", "GPT-4"]
-    },
-    {
-        title: "Data Engineering",
-        icon: Database,
-        description: "Building resilient data foundations that ensure high-quality information flows across your entire organization.",
-        subservices: [
-            "End-to-end ETL Pipelines",
-            "Data Warehousing (BigQuery, Snowflake)",
-            "Real-time Analytics Streaming",
-            "Data Governance & Quality",
-            "Executive Dashboards"
-        ],
-        tech: ["Spark", "Airflow", "dbt", "Kafka", "Data-mesh"]
-    },
-    {
-        title: "Intelligent Automation",
-        icon: Cpu,
-        description: "Orchestrating complex workflows through intelligent bots and API integrations that eliminate manual bottlenecks.",
-        subservices: [
-            "Workflow Orchestration",
-            "Custom API Ecosystems",
-            "Intelligent Monitoring Bots",
-            "Legacy System Integration",
-            "Process Optimization"
-        ],
-        tech: ["Node.js", "Python", "Zapier", "n8n", "Custom SDKs"]
-    },
-    {
-        title: "Custom SaaS Products",
-        icon: Layout,
-        description: "Developing scalable, AI-native applications that provide unique value to your customers and internal teams.",
-        subservices: [
-            "AI-Powered Platforms",
-            "Enterprise Portal Design",
-            "MVP Fast-track Development",
-            "Cloud-native Architectures",
-            "SaaS Scaling & Security"
-        ],
-        tech: ["Next.js", "React", "PostgreSQL", "Vercel", "AWS"]
-    },
-    {
-        title: "Web Design & Apps",
-        icon: Globe,
-        description: "Architecting high-performance web experiences and complex applications with a focus on premium UX/UI.",
-        subservices: [
-            "Progressive Web Apps (PWA)",
-            "High-end UI/UX Architecture",
-            "Interactive Web Design",
-            "Full-stack Web Ecosystems",
-            "Performance Optimization"
-        ],
-        tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion"]
-    },
-    {
-        title: "Brand & Rebranding",
-        icon: Palette,
-        description: "Strategically defining and redesigning corporate identities that resonate with the modern digital landscape.",
-        subservices: [
-            "Strategic Brand Rebranding",
-            "Visual Identity Systems",
-            "Corporate Strategy & Positioning",
-            "Premium Branding Guidelines",
-            "Brand Voice & Messaging"
-        ],
-        tech: ["Strategy", "Visuals", "Identity", "Premium", "Modern"]
-    },
-    {
-        title: "Graphic Design & Logos",
-        icon: Layers,
-        description: "Creative visual engineering, from professional logo creation to comprehensive graphic systems.",
-        subservices: [
-            "Corporate Logo Design",
-            "Creative Graphic Assets",
-            "Brand Design Systems",
-            "Vector Engineering",
-            "Visual Storytelling"
-        ],
-        tech: ["Adobe", "Figma", "Design", "Vector", "Creativity"]
-    },
-    {
-        title: "Marketing & Growth",
-        icon: Megaphone,
-        description: "Data-driven marketing strategies engineered to scale ROI and authority through intelligent distribution.",
-        subservices: [
-            "Performance Marketing",
-            "SEO & Content Architecture",
-            "Social Media Engineering",
-            "Growth Strategy Consulting",
-            "Marketing Automation"
-        ],
-        tech: ["Ads", "SEO", "Strategy", "Analytics", "Scaling"]
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Services() {
+    const { t } = useLanguage();
+
+    const services = [
+        {
+            ...t.services.items.ai,
+            icon: Brain,
+            tech: ["PyTorch", "TensorFlow", "HuggingFace", "Mistral", "GPT-4"]
+        },
+        {
+            ...t.services.items.data,
+            icon: Database,
+            tech: ["Spark", "Airflow", "dbt", "Kafka", "Data-mesh"]
+        },
+        {
+            ...t.services.items.automation,
+            icon: Cpu,
+            tech: ["Node.js", "Python", "Zapier", "n8n", "Custom SDKs"]
+        },
+        {
+            ...t.services.items.saas,
+            icon: Layout,
+            tech: ["Next.js", "React", "PostgreSQL", "Vercel", "AWS"]
+        },
+        {
+            ...t.services.items.web,
+            icon: Globe,
+            tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion"]
+        },
+        {
+            ...t.services.items.branding,
+            icon: Palette,
+            tech: ["Strategy", "Visuals", "Identity", "Premium", "Modern"]
+        },
+        {
+            ...t.services.items.graphics,
+            icon: Layers,
+            tech: ["Adobe", "Figma", "Design", "Vector", "Creativity"]
+        },
+        {
+            ...t.services.items.marketing,
+            icon: Megaphone,
+            tech: ["Ads", "SEO", "Strategy", "Analytics", "Scaling"]
+        }
+    ];
+
     return (
         <section id="services" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
@@ -133,7 +73,7 @@ export default function Services() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-black mb-6"
                     >
-                        Enterprise-Grade AI Excellence
+                        {t.services.heading}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -142,8 +82,7 @@ export default function Services() {
                         transition={{ delay: 0.2 }}
                         className="text-foreground/60 max-w-2xl mx-auto text-lg"
                     >
-                        We don't just build software; we engineer competitive advantages through
-                        advanced data strategy and cutting-edge artificial intelligence.
+                        {t.services.subheading}
                     </motion.p>
                 </div>
 
@@ -168,13 +107,13 @@ export default function Services() {
                                 <div>
                                     <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
                                     <p className="text-foreground/60 leading-relaxed">
-                                        {service.description}
+                                        {service.desc}
                                     </p>
                                 </div>
                             </div>
 
                             <div className="space-y-4 mb-8">
-                                {service.subservices.map((sub) => (
+                                {service.subs.map((sub: string) => (
                                     <div key={sub} className="flex items-center gap-3">
                                         <CheckCircle2 className="w-5 h-5 text-primary" />
                                         <span className="text-sm font-medium">{sub}</span>
@@ -196,3 +135,4 @@ export default function Services() {
         </section>
     );
 }
+

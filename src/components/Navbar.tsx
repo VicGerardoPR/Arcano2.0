@@ -6,16 +6,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const navLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Chat AI", href: "#v-ai" },
-  { name: "Case Studies", href: "#case-studies" },
-  { name: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav.services, href: "#services" },
+    { name: t.nav.chat, href: "#v-ai" },
+    { name: t.nav.cases, href: "#case-studies" },
+    { name: t.nav.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,21 +54,48 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* Language Switcher */}
+          <div className="flex items-center gap-2 border-l border-white/10 pl-8">
+            <button
+              onClick={() => setLanguage("en")}
+              className={`text-[10px] font-bold tracking-widest uppercase transition-colors ${language === "en" ? "text-primary" : "text-foreground/30 hover:text-foreground"
+                }`}
+            >
+              EN
+            </button>
+            <span className="text-white/10 text-[10px]">|</span>
+            <button
+              onClick={() => setLanguage("es")}
+              className={`text-[10px] font-bold tracking-widest uppercase transition-colors ${language === "es" ? "text-primary" : "text-foreground/30 hover:text-foreground"
+                }`}
+            >
+              ES
+            </button>
+          </div>
+
           <Link href="#contact">
             <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 group">
-              Contact Us
+              {t.nav.contactBtn}
               <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <button onClick={() => setLanguage("en")} className={`text-[10px] font-bold ${language === "en" ? "text-primary" : "text-foreground/40"}`}>EN</button>
+            <span className="text-white/10 text-[10px]">|</span>
+            <button onClick={() => setLanguage("es")} className={`text-[10px] font-bold ${language === "es" ? "text-primary" : "text-foreground/40"}`}>ES</button>
+          </div>
+          <button
+            className="text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -89,7 +119,7 @@ export default function Navbar() {
             ))}
             <Link href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
               <Button className="w-full bg-primary text-primary-foreground">
-                Contact Us
+                {t.nav.contactBtn}
               </Button>
             </Link>
           </motion.div>

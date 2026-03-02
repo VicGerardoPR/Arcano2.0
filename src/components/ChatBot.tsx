@@ -12,16 +12,29 @@ type Message = {
     content: string;
 };
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function ChatBot() {
+    const { t, language } = useLanguage();
     const [messages, setMessages] = useState<Message[]>([
         {
             role: "assistant",
-            content: "Hello! I'm Arcano's AI Strategist. How can I help you architect your next intelligence project today?"
+            content: t.chat.welcome
         }
     ]);
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
+
+    // Reset messages when language changes to show the welcome message in the new language
+    useEffect(() => {
+        setMessages([
+            {
+                role: "assistant",
+                content: t.chat.welcome
+            }
+        ]);
+    }, [language, t.chat.welcome]);
 
     useEffect(() => {
         if (scrollRef.current) {
@@ -59,7 +72,7 @@ export default function ChatBot() {
         } catch (error) {
             setMessages((prev) => [
                 ...prev,
-                { role: "assistant", content: "I'm sorry, I'm having trouble connecting to my engine. Please try again or contact us directly." }
+                { role: "assistant", content: t.chat.error }
             ]);
         } finally {
             setIsLoading(false);
@@ -78,19 +91,17 @@ export default function ChatBot() {
                         >
                             <div className="flex items-center gap-2 text-primary mb-4">
                                 <Sparkles className="w-5 h-5" />
-                                <span className="text-xs font-bold uppercase tracking-widest">Virtual Intelligence</span>
+                                <span className="text-xs font-bold uppercase tracking-widest">{t.chat.tag}</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-                                Experience the Power <br /> of our AI Expertise.
+                                {t.chat.title}
                             </h2>
                             <p className="text-foreground/60 text-lg mb-8 leading-relaxed">
-                                Interact with our custom-trained AI consultant to explore how our
-                                solutions can be tailored to your specific enterprise challenges.
-                                Our AI understands our complete service catalog and strategy models.
+                                {t.chat.desc}
                             </p>
 
                             <div className="space-y-4">
-                                {["Real-time consultation", "Strategic insights", "Solution discovery"].map((item) => (
+                                {t.chat.features.map((item) => (
                                     <div key={item} className="flex items-center gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                                         <span className="font-medium">{item}</span>
@@ -113,10 +124,10 @@ export default function ChatBot() {
                                     <Bot className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-bold">Arcano AI Assistant</p>
+                                    <p className="text-sm font-bold">{t.chat.assistantName}</p>
                                     <div className="flex items-center gap-1.5">
                                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                        <span className="text-[10px] text-foreground/40 font-bold uppercase tracking-wider">Online</span>
+                                        <span className="text-[10px] text-foreground/40 font-bold uppercase tracking-wider">{t.chat.online}</span>
                                     </div>
                                 </div>
                             </div>
@@ -141,8 +152,8 @@ export default function ChatBot() {
                                                 {message.role === "user" ? <User className="w-5 h-5" /> : <Bot className="w-5 h-5" />}
                                             </div>
                                             <div className={`p-4 rounded-2xl text-sm leading-relaxed ${message.role === "user"
-                                                    ? "bg-primary text-primary-foreground rounded-tr-none"
-                                                    : "bg-white/5 text-foreground rounded-tl-none border border-white/5"
+                                                ? "bg-primary text-primary-foreground rounded-tr-none"
+                                                : "bg-white/5 text-foreground rounded-tl-none border border-white/5"
                                                 }`}>
                                                 {message.content}
                                             </div>
@@ -153,7 +164,7 @@ export default function ChatBot() {
                                     <div className="flex justify-start">
                                         <div className="flex gap-3 items-center text-primary/50 text-xs font-bold px-4 py-2 rounded-full bg-primary/5">
                                             <Loader2 className="w-4 h-4 animate-spin" />
-                                            AI IS THINKING...
+                                            {t.chat.thinking}
                                         </div>
                                     </div>
                                 )}
@@ -167,7 +178,7 @@ export default function ChatBot() {
                                 className="flex gap-2"
                             >
                                 <Input
-                                    placeholder="Ask about our services..."
+                                    placeholder={t.chat.placeholder}
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     className="bg-white/5 border-white/10 focus-visible:ring-primary h-12"
@@ -183,3 +194,4 @@ export default function ChatBot() {
         </section>
     );
 }
+

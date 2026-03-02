@@ -31,20 +31,29 @@ const cases = [
     }
 ];
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function CaseStudies() {
+    const { t } = useLanguage();
+
+    const cases = t.cases.items.map((c, i) => ({
+        ...c,
+        industry: i === 0 ? "FinTech" : i === 1 ? "Hospitality" : "E-commerce",
+        stack: i === 0 ? ["NLP", "PyTorch", "GCP"] : i === 1 ? ["Computer Vision", "LLMs", "Node.js"] : ["Data Pipelines", "BigQuery", "Spark"]
+    }));
+
     return (
         <section id="case-studies" className="py-24 relative">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl">
-                        <h2 className="text-4xl md:text-5xl font-black mb-6">Proven Impact. <br />Enterprise Results.</h2>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6">{t.cases.heading}</h2>
                         <p className="text-foreground/60 text-lg">
-                            We deliver measurable value through technical excellence.
-                            Explore how we've helped industry leaders dominate their sectors.
+                            {t.cases.subheading}
                         </p>
                     </div>
                     <button className="flex items-center gap-2 text-primary font-bold group">
-                        View All Success Stories
+                        {t.cases.cta}
                         <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
@@ -71,7 +80,7 @@ export default function CaseStudies() {
 
                             <h4 className="text-lg font-bold mb-4">{c.title}</h4>
                             <p className="text-foreground/60 text-sm leading-relaxed mb-8 flex-1">
-                                {c.description}
+                                {c.desc}
                             </p>
 
                             <div className="space-y-3 mb-8">
@@ -95,3 +104,4 @@ export default function CaseStudies() {
         </section>
     );
 }
+
