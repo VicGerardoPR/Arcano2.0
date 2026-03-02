@@ -27,16 +27,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "py-4 glass border-b border-white/10" : "py-6 bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "py-4 glass border-b border-white/10" : "py-6 bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           {/* Logo actual placeholder - se asume que esta en public/arcano-logo.png */}
-          <img 
-            src="https://www.arcanointelligence.com/arcano-logo.png" 
-            alt="Arcano Intelligence" 
+          <img
+            src="/arcano-logo.png"
+            alt="Arcano Intelligence"
             className="h-10 w-auto"
           />
         </Link>

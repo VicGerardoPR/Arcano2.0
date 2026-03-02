@@ -16,7 +16,7 @@ export default function Hero() {
                 playsInline
                 className="absolute top-0 left-0 w-full h-full object-cover z-0 brightness-[0.4]"
             >
-                <source src="https://www.arcanointelligence.com/hero-video.mp4" type="video/mp4" />
+                <source src="/video.mp4" type="video/mp4" />
             </video>
 
             {/* Content */}
