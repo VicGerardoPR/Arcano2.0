@@ -78,25 +78,31 @@ export const translations = {
             cta: "View All Success Stories",
             items: [
                 {
-                    client: "Lumen Capital",
-                    industry: "FinTech",
-                    title: "AI-Driven Market Analysis Engine",
-                    desc: "Developed a real-time sentiment analysis and predictive engine that processes millions of financial data points to identify high-alpha opportunities.",
-                    results: ["+45% Analysis Speed", "92% Prediction Accuracy", "Real-time Processing"]
+                    client: "Future Health Dispensary",
+                    industry: "Medicinal Botanical",
+                    title: "Advanced E-commerce & Branding",
+                    desc: "A premium digital ecosystem for the medicinal botanical industry, featuring a high-performance landing page and sophisticated brand identity.",
+                    results: ["+60% User Engagement", "High-Performance Speed", "Premium Brand Identity"],
+                    image: "/portfolio/future-health.png",
+                    link: "https://future2-0.vercel.app"
                 },
                 {
-                    client: "Isla Verde Collective",
-                    industry: "Hospitality",
-                    title: "Autonomous Guest Intelligence",
-                    desc: "Implemented a multimodal AI system that personalizes the guest experience through computer vision and natural language processing.",
-                    results: ["30% Increase in Upsales", "Automated Check-in", "Sentiment Monitoring"]
+                    client: "Cultivos de Salud",
+                    industry: "Agriculture Tech",
+                    title: "Strategic Digital Presence",
+                    desc: "An enterprise-grade platform showcasing advanced medicinal cultivation methods with a focus on scientific excellence and transparency.",
+                    results: ["Institutional Authority", "Scientific Transparency", "Digital Transformation"],
+                    image: "/portfolio/cultivos-salud.png",
+                    link: "https://web-cds.vercel.app"
                 },
                 {
-                    client: "ShopWave Retail",
-                    industry: "E-commerce",
-                    title: "Dynamic Inventory Orchestration",
-                    desc: "A large-scale data engineering project that optimizes global inventory distribution based on real-time demand signals and logistical constraints.",
-                    results: ["20% Less Waste", "Optimized Logistics", "Global Visibility"]
+                    client: "Arcano Intelligence",
+                    industry: "AI Engineering",
+                    title: "The Intelligence Singularity",
+                    desc: "Our flagship enterprise platform demonstrating next-gen AI engineering, from autonomous agents to complex data orchestration.",
+                    results: ["Industry Leadership", "Technical Singularity", "Enterprise Scalability"],
+                    image: "/portfolio/arcano-intelligence.png",
+                    link: "https://www.arcanointelligence.com"
                 }
             ]
         },
@@ -202,25 +208,31 @@ export const translations = {
             cta: "Ver todos los casos de éxito",
             items: [
                 {
-                    client: "Lumen Capital",
-                    industry: "FinTech",
-                    title: "Motor de Análisis de Mercado IA",
-                    desc: "Desarrollamos un motor de análisis de sentimiento y predicción en tiempo real que procesa millones de datos financieros.",
-                    results: ["+45% Velocidad de Análisis", "92% Precisión Predictiva", "Procesamiento en Tiempo Real"]
+                    client: "Future Health Dispensary",
+                    industry: "Botánica Medicinal",
+                    title: "E-commerce Avanzado y Branding",
+                    desc: "Un ecosistema digital premium para la industria botánica medicinal, con una página de aterrizaje de alto rendimiento e identidad de marca sofisticada.",
+                    results: ["+60% Interacción de Usuario", "Velocidad de Alto Rendimiento", "Identidad de Marca Premium"],
+                    image: "/portfolio/future-health.png",
+                    link: "https://future2-0.vercel.app"
                 },
                 {
-                    client: "Isla Verde Collective",
-                    industry: "Hospitalidad",
-                    title: "Inteligencia de Huéspedes Autónoma",
-                    desc: "Implementamos un sistema de IA multimodal que personaliza la experiencia del huésped mediante visión artificial.",
-                    results: ["30% Aumento en Ventas", "Check-in Automatizado", "Monitoreo de Sentimiento"]
+                    client: "Cultivos de Salud",
+                    industry: "AgroTecnología",
+                    title: "Presencia Digital Estratégica",
+                    desc: "Una plataforma de nivel empresarial que muestra métodos de cultivo medicinal avanzados con un enfoque en la excelencia científica.",
+                    results: ["Autoridad Institucional", "Transparencia Científica", "Transformación Digital"],
+                    image: "/portfolio/cultivos-salud.png",
+                    link: "https://web-cds.vercel.app"
                 },
                 {
-                    client: "ShopWave Retail",
-                    industry: "E-commerce",
-                    title: "Orquestación Dinámica de Inventario",
-                    desc: "Proyecto de ingeniería de datos a gran escala que optimiza la distribución global de inventario basada en demanda real.",
-                    results: ["20% Menos Desperdicio", "Logística Optimizada", "Visibilidad Global"]
+                    client: "Arcano Intelligence",
+                    industry: "Ingeniería de IA",
+                    title: "La Singularidad de la Inteligencia",
+                    desc: "Nuestra plataforma insignia que demuestra la ingeniería de IA de próxima generación, desde agentes autónomos hasta orquestación de datos compleja.",
+                    results: ["Liderazgo en la Industria", "Singularidad Técnica", "Escalabilidad Empresarial"],
+                    image: "/portfolio/arcano-intelligence.png",
+                    link: "https://www.arcanointelligence.com"
                 }
             ]
         },
